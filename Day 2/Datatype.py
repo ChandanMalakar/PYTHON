@@ -1,6 +1,6 @@
 #string
 
-print("Hello"[0]) #this is known as subscripting (pulling out a particular character from a string)
+print("Hello"[0]) #this is known as sub-scripting (pulling out a particular element from a string)
 
 #concatenating
 
