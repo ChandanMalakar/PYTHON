@@ -1,1 +1,0 @@
-print(f"Your score is : {true+love}")
