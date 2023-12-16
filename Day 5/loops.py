@@ -9,3 +9,5 @@ for fruit in fruits:
 #for loops in python
 for i in range(0,length):
     print(fruits[i])
+
+#THANKYOU
