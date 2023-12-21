@@ -2,7 +2,7 @@ import random
 
 #STEP 1
 
-word_list=["neko", "rabbits", "calfs"]
+# word_list=["neko", "rabbits", "calfs"]
 
 # TAKE A RANDOM WORD FROM THE WORDLIST.
 # ASSIGN IT TO A VARIABLE 'CHOSEN_WORD'. 
@@ -12,8 +12,12 @@ word_list=["neko", "rabbits", "calfs"]
 
 # CHECK IF THE GUESSED LETTER IS THERE IN THE CHOSEN WORD.
 
+# import hangman_words # OR USE THIS 
+from hangman_words import word_list
+
 chosen_word=random.choice(word_list)
 # print(chosen_word)
+
 
 # guess=input("Guess a letter : \n")
 # guess.lower();
@@ -52,69 +56,25 @@ for i in range(0,len(chosen_word)):
         
 # now writing all the above code together
 
-stages=['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-========= ''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''']
+# import hangman_ascii_art # OR USE THIS
+from hangman_ascii_art import logo, stages
+
+print(logo)
 
 end_of_game=False
+
+
+
 chances=len(stages)
 life=0
-print('''▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-██░██░█░▄▄▀█░▄▄▀█░▄▄▄█░▄▀▄░█░▄▄▀█░▄▄▀
-██░▄▄░█░▀▀░█░██░█░█▄▀█░█▄█░█░▀▀░█░██░
-██░██░█▄██▄█▄██▄█▄▄▄▄█▄███▄█▄██▄█▄██▄
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-''')
+print()
 while not end_of_game and chances!=0:    
+    
     guess=input("Guess a letter : \n")
     guess.lower();
+
+    if guess in display:
+        print("you've already guessed it in the guessed letter")
 
     for i in range(0,len(chosen_word)):
         if(chosen_word[i]==guess):
@@ -130,4 +90,6 @@ while not end_of_game and chances!=0:
     elif "_" not in display:
         end_of_game=True
         print("You Win...!")
-print("You lose...LOSER")
+if chances==0:
+    print("You Lose...LOSER")
+    print(f"Psst....the word was {chosen_word}")
