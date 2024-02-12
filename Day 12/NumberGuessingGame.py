@@ -12,10 +12,10 @@ guess=random.randint(1,100)
 
 
 if level=='easy':
-    no_of_attempts=5
+    no_of_attempts=10
     print(f"You have {no_of_attempts} attempts remaining to guess the number ")
 else:
-    no_of_attempts=10
+    no_of_attempts=5
     print(f"You have {no_of_attempts} attempts remaining to guess the number ")
 
 run_until=False
