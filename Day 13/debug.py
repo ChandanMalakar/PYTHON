@@ -46,3 +46,9 @@
 #     print(b_list)
 
 # mutate([1,2,3,4,5,8,13])
+
+# 7. Take a break
+# 8. Ask a friend
+# 9. Run and check the code often you make changes into it
+# 10. Ask StackOverflow
+ 
